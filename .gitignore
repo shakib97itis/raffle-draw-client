@@ -1,0 +1,4 @@
+# Ignore Visual Studio Code folder
+/.vscode
+# Ignore Visual Studio Code workspace file
+*.code-workspace
