@@ -13,18 +13,20 @@ const loader = document.querySelector(".loader");
  **/
 function addPurchaseToResult(ticketInfo) {
     const clone = purchaseResultTemplate.content.cloneNode(true);
-    const purchaseCard = clone.getElementById("purchaseCard").classList.add("purchaseCard--success");  
+    clone.getElementById("purchaseCard").classList.add("purchaseCard--success");
     clone.getElementById("purchaseCardUsername").textContent = `${ticketInfo.username}`;
     clone.getElementById("purchaseCardQuantity").textContent = `${ticketInfo.quantity}`;
     clone.getElementById("purchaseCardPrice").textContent = `$${ticketInfo.price * ticketInfo.quantity}`;
     purchaseResult.appendChild(clone);
 }
 
-function addPurchaseErrorToResult(data) {
+function addPurchaseErrorToResult(ticketInfo) {
     const clone = purchaseResultTemplate.content.cloneNode(true);
-    clone.getElementById("purchaseCardUsername").textContent = `${data.username}`;
-    clone.getElementById("purchaseCardQuantity").textContent = `${data.quantity}`;
-    clone.getElementById("purchaseCardPrice").textContent = `$${data.price}`;
+    clone.getElementById("purchaseCard").classList.add("purchaseCard--error");
+    clone.querySelector(".purchaseCard__description").textContent = "An error occurred while processing your purchase. Please try again.";
+    clone.getElementById("purchaseCardUsername").textContent = `${ticketInfo.username}`;
+    clone.getElementById("purchaseCardQuantity").textContent = `${ticketInfo.quantity}`;
+    clone.getElementById("purchaseCardPrice").textContent = `$${ticketInfo.price * ticketInfo.quantity}`;
     purchaseResult.appendChild(clone);
 }
 
@@ -38,7 +40,7 @@ function handleForm(event) {
     formContainer.style.display = "none";
     loader.classList.add("loader--open");
     // Add purchase to the purchase result
-    fetch('https://raffle-draw-server-mu.vercel.app/api/v1/tickets/b/sell', {
+    fetch('https://raffle-draw-server-mu.vercel.app/api/v11/tickets/b/sell', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -57,7 +59,8 @@ function handleForm(event) {
         })
         .catch(error => {
             console.error('Error:', error);
-            // addPurchaseToResult({ username, price, quantity });
+            addPurchaseErrorToResult({ username, price, quantity });
+            loader.classList.remove("loader--open");
         });
 }
 

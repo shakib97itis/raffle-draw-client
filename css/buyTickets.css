@@ -91,6 +91,10 @@
   padding: 2rem;
 }
 
+.purchaseCard--error .purchaseCard__description {
+  color: #f87171;
+}
+
 .purchaseCard__title {
   font-size: 2.8rem;
   margin-bottom: 1rem;
