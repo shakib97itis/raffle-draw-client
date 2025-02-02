@@ -46,17 +46,6 @@ To run the project locally, follow these steps:
 4. The system will randomly select three winners.
 5. View results and celebrate the lucky winners!
 
-## Project Structure
-
-```
-raffle-draw-client/
-│-- assets/               # Images, icons, and other assets
-│-- css/                  # Stylesheets following BEM methodology
-│-- js/                   # JavaScript files for lottery logic
-│-- index.html            # Main HTML file
-│-- README.md             # Project documentation
-```
-
 ## Contributing
 
 Contributions are welcome! If you want to improve this project, feel free to fork the repository and create a pull request.
