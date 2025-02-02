@@ -1,16 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/draw.css">
-    <title>Draw Lottery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/draw.css">
+  <title>Draw Lottery</title>
 </head>
+
 <body>
+  <button class="navToggle">
+    <span class="navToggle__bar"></span>
+    <span class="navToggle__bar"></span>
+    <span class="navToggle__bar"></span>
+  </button>
 
+  <div class="drawer">
+    <nav class="drawerNav">
+      <ul class="drawerNavLinks">
+        <li class="drawerNavLinksItem">
+          <a href="index.html" class="drawerNavLinksItem__link">01 // All Tickets</a>
+        </li>
 
-    <script src="./js/global.js"></script>
-    <script src="./js/draw.js"></script>
+        <li class="drawerNavLinksItem">
+          <a href="myTickets.html" class="drawerNavLinksItem__link">02 // My Tickets</a>
+        </li>
+
+        <li class="drawerNavLinksItem">
+          <a href="buyTickets.html" class="drawerNavLinksItem__link">03 // Buy Tickets</a>
+        </li>
+        <li class="drawerNavLinksItem">
+          <a href="draw.html" class="drawerNavLinksItem__link">04 // Draw Lottery</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- overlay -->
+  <div class="overlay"></div>
+
+  <!-- Loader -->
+  <span class="loader"></span>
+
+  <button id="drawButton" class="drawButton">Get 3 winners</button>
+
+  <main class="container">
+    <h1 class="page-title random-skew">Draw Lottery</h1>
+    <div class="data-grid" id="dataGrid">
+      <!-- Replace table with card layout -->
+      <template id="ticketTemplate">
+        <div class="ticketCard">
+          <div class="ticketCard__id"></div>
+          <div class="ticketCard__username"></div>
+          <div class="ticketCard__price"></div>
+          <div class="ticketCard__date"></div>
+        </div>
+      </template>
+    </div>
+  </main>
+
+  <script src="./js/global.js"></script>
+  <script src="./js/draw.js"></script>
 </body>
+
 </html>

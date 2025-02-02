@@ -1,0 +1,33 @@
+.data-grid {
+  padding-top: 8rem;
+}
+
+.drawButton {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #f1356d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.drawButton:hover {
+  background-color: #f1356d;
+}
+
+.drawButton:active {
+  background-color: #f1356d;
+}
+
+.drawButton:focus {
+  outline: none;
+}
+
+.drawButton__hidden {
+  display: none;
+}
