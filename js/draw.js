@@ -30,7 +30,7 @@ drawButton.addEventListener('click', function (event) {
                 loader.classList.remove("loader--open");
             } else {
                 loader.classList.remove("loader--open");
-                grid.innerHTML = '<p>Something went wrong!</p>';
+                grid.innerHTML = '<p class="center-text">Something went wrong!.</p>';
             }
         })
 });
