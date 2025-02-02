@@ -1,0 +1,195 @@
+.page-title {
+  margin-bottom: 5rem;
+}
+
+/* ******************************************** */
+/* BUY TICKETS FORM STYLE */
+/* ******************************************** */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyTicketForm {
+  min-width: 30rem;
+}
+
+.buyTicketForm__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.buyTicketForm__label {
+  font-size: 1.6rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-weight: semi-bold;
+}
+
+.buyTicketForm__input {
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.buyTicketForm__button {
+  font-family: inherit;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: white;
+  background-color: #ff4563;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  letter-spacing: 0.2rem;
+}
+
+.buyTicketForm__button:hover {
+  background-color: #ff0040;
+}
+
+/* ******************************************** */
+/* PURCHASE RESULT STYLE */
+/* ******************************************** */
+
+.purchaseResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.purchaseCard {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+  max-width: 60rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1rem);
+  overflow: hidden;
+}
+
+.purchaseCard--success {
+  border: 2px solid #4ade80;
+}
+
+.purchaseCard--error {
+  border: 2px solid #f87171;
+}
+
+.purchaseCard__content {
+  padding: 2rem;
+}
+
+.purchaseCard__title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.purchaseCard__description {
+  font-size: 1.4rem;
+  color: #ffffffd2;
+  margin-bottom: 1rem;
+}
+
+.purchaseCardContent {
+  /* margin-top: 1rem; */
+}
+
+.purchaseCardContent__text {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+
+.purchaseCardContent__data {
+  color: #f33a3a;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.purchaseCard__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.btn {
+  overflow: hidden;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: inherit;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+}
+
+.btn:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Lower z-index */
+}
+
+.btn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: 1; /* Higher z-index */
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #fff9, 4px 4px 5px 0px #fff9;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn:active {
+  top: 2px;
+}
+
+.btn--primary:before {
+  background: linear-gradient(145deg, #ff4563, #ff4563);
+}
+
+.btn--secondary:before {
+  background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+
+.btn--tertiary:before {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}

@@ -8,9 +8,104 @@
   <link rel="stylesheet" href="css/buyTickets.css">
   <title>Buy Tickets</title>
 </head>
+
 <body>
+  <button class="navToggle">
+    <span class="navToggle__bar"></span>
+    <span class="navToggle__bar"></span>
+    <span class="navToggle__bar"></span>
+  </button>
+
+  <div class="drawer">
+    <nav class="drawerNav">
+      <ul class="drawerNavLinks">
+        <li class="drawerNavLinksItem">
+          <a href="index.html" class="drawerNavLinksItem__link">01 // All Tickets</a>
+        </li>
+
+        <li class="drawerNavLinksItem">
+          <a href="myTickets.html" class="drawerNavLinksItem__link">02 // My Tickets</a>
+        </li>
+
+        <li class="drawerNavLinksItem">
+          <a href="buyTickets.html" class="drawerNavLinksItem__link">03 // Buy Tickets</a>
+        </li>
+        <li class="drawerNavLinksItem">
+          <a href="draw.html" class="drawerNavLinksItem__link">04 // Draw Lottery</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- overlay -->
+  <div class="overlay"></div>
+
+  <!-- Loader -->
+  <span class="loader"></span>
+
+  <main id="buyTickets" class="container">
+    <h1 class="page-title">Buy Tickets</h1>
+    <div class="formContainer formContainer--ticket" id="buyTicketFormContainer">
+      <form id="buyTicketForm" class="buyTicketForm">
+        <div class="buyTicketForm__group">
+          <label for="username" class="buyTicketForm__label">Username:</label>
+          <input class="buyTicketForm__input" type="text" id="username" name="username" required>
+        </div>
+        <div class="buyTicketForm__group">
+          <label for="price" class="buyTicketForm__label">Price:</label>
+          <input type="number" id="price" name="price" class="buyTicketForm__input" value="10" required>
+        </div>
+        <div class="buyTicketForm__group">
+          <label for="quantity" class="buyTicketForm__label">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" class="buyTicketForm__input" value="1" required>
+        </div>
+        <div class="buyTicketForm__group">
+          <button type="submit" class="buyTicketForm__button">Buy Ticket</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Purchase result will be displayed here -->
+    <div id="purchaseResult" class="purchaseResult">
+      <template id="purchaseResultTemplate">
+        <div class="purchaseCard" id="purchaseCard">
+          <div class="purchaseCard__content">
+            <h2 class="purchaseCard__title">Purchase Summary</h2>
+            <p class="purchaseCard__description">Thank you for your purchase!</p>
+            <div class="purchaseCardContent">
+              <p class="purchaseCardContent__text">Username:
+                <span class="purchaseCardContent__data" id="purchaseCardUsername">[username]</span>
+              </p>
+              <p class="purchaseCardContent__text">Quantity:
+                <span class="purchaseCardContent__data" id="purchaseCardQuantity">[3]</span>
+              </p>
+              <p class="purchaseCardContent__text">Total Price:
+                <span class="purchaseCardContent__data" id="purchaseCardPrice">[quantity * price]$</span>
+              </p>
+            </div>
+          </div>
+          <div class="purchaseCard__buttons">
+            <button class="btn btn--secondary" id="buyMoreTickets">
+              Buy More Tickets
+            </button>
+            
+            <button class="btn btn--primary" id="seeMyTickets">
+              See my tickets
+            </button>
+            
+            <button class="btn btn--tertiary" id="buyMoreTickets">
+              See my tickets
+            </button>
+
+          </div>
+        </div>
+      </template>
+    </div>
+    </div>
+  </main>
 
   <script src="./js/global.js"></script>
   <script src="./js/buyTickets.js"></script>
 </body>
+
 </html>
