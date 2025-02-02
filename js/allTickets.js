@@ -21,6 +21,8 @@ function renderTickets() {
                 grid.appendChild(clone);
             }
         }).catch((err) => {
+            grid.innerHTML = '<p class="center-text">Something went wrong!.</p>';
+            loader.classList.remove("loader--open");
             console.error(err);
         });
 }

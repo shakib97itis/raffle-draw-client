@@ -28,7 +28,8 @@ document.getElementById('findTicketForm').addEventListener('submit', function (e
                 renderTickets(data);
                 loader.classList.remove("loader--open");
             } else {
-                grid.innerHTML = '<p>No tickets found for this username.</p>';
+                grid.innerHTML = '<p class="center-text">No tickets found for this username.</p>';
+                loader.classList.remove("loader--open");
             }
         })
 });
