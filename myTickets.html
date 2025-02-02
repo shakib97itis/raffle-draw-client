@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/myTickets.css">
-    <title>My Tickets</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/myTickets.css">
+  <title>My Tickets</title>
 </head>
+
 <body>
-    
-    <script src="./js/global.js"></script>
-    <script src="./js/myTickets.js"></script>
+  <button class="navToggle">
+    <span class="navToggle__bar"></span>
+    <span class="navToggle__bar"></span>
+    <span class="navToggle__bar"></span>
+  </button>
+
+  <div class="drawer">
+    <nav class="drawerNav">
+      <ul class="drawerNavLinks">
+        <li class="drawerNavLinksItem">
+          <a href="index.html" class="drawerNavLinksItem__link">01 // All Tickets</a>
+        </li>
+
+        <li class="drawerNavLinksItem">
+          <a href="myTickets.html" class="drawerNavLinksItem__link">02 // My Tickets</a>
+        </li>
+
+        <li class="drawerNavLinksItem">
+          <a href="buyTickets.html" class="drawerNavLinksItem__link">03 // Buy Tickets</a>
+        </li>
+        <li class="drawerNavLinksItem">
+          <a href="draw.html" class="drawerNavLinksItem__link">04 // Draw Lottery</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- overlay -->
+  <div class="overlay"></div>
+
+  <!-- Loader -->
+  <span class="loader"></span>
+
+
+  <main id="findTicket" class="container">
+    <h2 class="page-title">Find Ticket</h2>
+
+    <form id="findTicketForm" class="ticketForm">
+      <div class="searchItem">
+        <input type="text" name="username" id="username" class="searchItem__input">
+        <button class="searchItem__button" type="submit">
+          <svg class="searchItem__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <div id="ticket-results" class="data-grid">
+      <!-- Replace table with card layout -->
+      <template id="ticketTemplate">
+        <div class="ticketCard">
+          <div class="ticketCard__id">CardId</div>
+          <div class="ticketCard__username">CardUsername</div>
+          <div class="ticketCard__price">CardPrice</div>
+          <div class="ticketCard__date">CardDate</div>
+        </div>
+      </template>
+    </div>
+  </main>
+
+  <script src="./js/global.js"></script>
+  <script src="./js/myTickets.js"></script>
 </body>
+
 </html>

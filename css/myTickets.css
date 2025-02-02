@@ -1,0 +1,97 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.ticketForm {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.searchItem {
+  position: relative;
+  width: fit-content;
+  background-color: #09122c;
+  border: none;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.searchItem::after,
+.searchItem::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 0;
+  border-radius: inherit;
+  background-image: linear-gradient(
+    var(--angle),
+    #94ffd1,
+    #c5c022,
+    #fe9090,
+    #ff61d8
+  );
+  animation: spin 4s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    --angle: 0deg;
+  }
+
+  100% {
+    --angle: 360deg;
+  }
+}
+
+.searchItem::before {
+  filter: blur(2rem);
+  opacity: 0.3;
+}
+
+.searchItem__input {
+  font-family: var(--comic-font);
+  width: 0;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  transition: width 0.3s ease;
+  color: white;
+  background-color: transparent;
+}
+
+.searchItem__button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.searchItem__icon {
+  width: 4rem;
+  fill: white;
+}
+
+.searchItem:hover .searchItem__input {
+  width: 30rem;
+  padding: 1rem 0;
+}
+
+.searchItem .searchItem__input:focus {
+  width: 35rem;
+  padding: 1rem 0;
+}
