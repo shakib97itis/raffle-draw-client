@@ -40,7 +40,7 @@ function handleForm(event) {
     formContainer.style.display = "none";
     loader.classList.add("loader--open");
     // Add purchase to the purchase result
-    fetch('https://raffle-draw-server-mu.vercel.app/api/v11/tickets/b/sell', {
+    fetch('https://raffle-draw-server-mu.vercel.app/api/v1/tickets/b/sell', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
